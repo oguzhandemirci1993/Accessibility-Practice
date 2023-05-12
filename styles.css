@@ -3,8 +3,49 @@ body {
     font-family: Verdana, Arial;
 }
 
-li::before {
-    SECTION
+div h2::before {
+    content:"Section"
+}
+
+div p::before {
+    content:"Explanation"
+}
+
+header {
+    width:100%;
+    height:50px;
+    background-color: #1fd660;
+    position:fixed;
+    top:0;
+}
+
+nav > ul > li{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+section h2 {
+    border-bottom:5px solid #1fd660;
+}
+
+section p {
+    padding: 100px 0 100px 0;
+}
+
+section h2, section p {     /*It is important not to write "section h2, p" instead of "section h2, section p" as type selectors*/
+    width:80%;
+    max-width:600px;
+    margin:0 auto;
+    text-align: left;
+}
+
+.section-divider {
+    margin: 150px auto 0px auto; /*Cutting the excess space at the end thanks to 0px margin-bottom value.*/
+}
+
+footer {
+    background-color:#1fd660;
+    height:50px;
 }
 
 footer p {
