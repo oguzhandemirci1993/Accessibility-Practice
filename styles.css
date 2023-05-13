@@ -18,32 +18,50 @@ div p::before {
     content:"Explanation"
 }
 
+li > a , footer > p > a {
+    text-decoration: none;
+  }
+
 header {
     width:100%;
     height:50px;
     background-color: #1fd660;
-    display:flex;
+    display:flex; /*Container should be flex.*/
     justify-content:space-between;
-    position:fixed;
-    top:0px;
+    position:fixed; 
+    top:0;
 }
 
-header h1, footer h3{
+header h1{
     color:#F0FFFF;
-    margin:0 auto;
-}
-
-header h1 {
-    display:flex;
+    padding-inline-start:0.5rem;
+    font-size:24px;
+    display:flex; /*Container items should be flex as well.*/
     align-items:center;
 }
 
+nav > ul {
+    display: flex; /*Container items should be flex as well.*/
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-block: 0;
+    height: 100%;
+    padding-inline-end:0.5rem;
+  }
+
+  nav > ul > li {
+    display: block;
+    margin: 0 0.2rem;
+  }
+
 section h2 {
     border-bottom:5px solid #1fd660;
+    padding-top: 70px;  /*IMPORTANT: Thanks to this code, we can prevent the section h2 elements became hidden under the header bar.*/
 }
 
 section p {
-    padding: 100px 0 100px 0;
+    padding: 100px 0 30px 0;
 }
 
 section h2, section p {     /*It is important not to write "section h2, p" instead of "section h2, section p" as type selectors*/
@@ -54,7 +72,7 @@ section h2, section p {     /*It is important not to write "section h2, p" inste
 }
 
 .section-divider {
-    margin: 150px auto 0px auto; /*Cutting the excess space at the end thanks to 0px margin-bottom value.*/
+    margin: 80px auto 70px auto;  /*Top and bottom space adjustment from top side under the header bar and  bottom side under the footer bar.*/
 }
 
 footer {
@@ -68,7 +86,8 @@ footer p {
     max-width:400px;
     min-width:300px;
     width:60vw;
-    margin: 0.5rem auto;
+    margin: 0.75rem auto;  /*font-size of footer p is smaller than footer h3 so we need to 
+    compansate the difference by using 0.75rem instead of 0.5rem compared to footer h3.*/
   }
   
 footer h3{
@@ -78,4 +97,6 @@ footer h3{
     min-width: 300px;
     width: 60vw;
     margin: 0.5rem auto;
+    color:#F0FFFF;
   }
+  
