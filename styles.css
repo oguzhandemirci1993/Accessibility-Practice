@@ -10,6 +10,44 @@ body {
     margin:0;  /*Removes default margin values of the web browsers so we won't see empty spaces around our elements when using this.*/
 }
 
+header {
+  width:100%;
+  height:50px;
+  background-color: #1fd660;
+  display:flex; /*Container should be flex.*/
+  justify-content:space-between;
+  position:fixed; 
+  top:0;
+}
+
+header h1{
+  color:#F0FFFF;
+  padding-inline-start:0.5rem;
+  font-size:24px;
+  display:flex; /*Container items should be flex as well.*/
+  align-items:center;
+}
+
+nav > ul {
+  display: flex; /*Container items should be flex as well.*/
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-block: 0;
+  height: 100%;
+  padding-inline-end:0.5rem;
+}
+
+nav > ul > li {
+  display: block;
+  margin: 0 0.2rem;
+}
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  cursor: pointer;
+}
+
 div h2::before {
     content:"Section"
 }
@@ -20,39 +58,6 @@ div p::before {
 
 li > a , footer > p > a {
     text-decoration: none;
-  }
-
-header {
-    width:100%;
-    height:50px;
-    background-color: #1fd660;
-    display:flex; /*Container should be flex.*/
-    justify-content:space-between;
-    position:fixed; 
-    top:0;
-}
-
-header h1{
-    color:#F0FFFF;
-    padding-inline-start:0.5rem;
-    font-size:24px;
-    display:flex; /*Container items should be flex as well.*/
-    align-items:center;
-}
-
-nav > ul {
-    display: flex; /*Container items should be flex as well.*/
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-block: 0;
-    height: 100%;
-    padding-inline-end:0.5rem;
-  }
-
-  nav > ul > li {
-    display: block;
-    margin: 0 0.2rem;
   }
 
 section h2 {
@@ -77,26 +82,29 @@ section h2, section p {     /*It is important not to write "section h2, p" inste
 
 footer {
     background-color:#1fd660;
-    height:50px;
+    height:40px;
+    text-align:center;  /*Center all text based semantic elements to center and this 
+    command should be applied to container rather than child elements.*/
+}
+
+footer h3{
+  font-size: 1rem;
+  max-width: 400px;
+  min-width: 300px;
+  width: 60vw;
+  margin: 0rem auto;  /*Same logic that explained at footer p*/
+  color:#F0FFFF;
 }
 
 footer p {
-    font-size: 0.75rem;
-    text-align:center;
-    max-width:400px;
-    min-width:300px;
-    width:60vw;
-    margin: 0.75rem auto;  /*font-size of footer p is smaller than footer h3 so we need to 
-    compansate the difference by using 0.75rem instead of 0.5rem compared to footer h3.*/
-  }
-  
-footer h3{
-    font-size: 1rem;
-    text-align: center;
-    max-width: 400px;
-    min-width: 300px;
-    width: 60vw;
-    margin: 0.5rem auto;
-    color:#F0FFFF;
-  }
+  font-size: 0.75rem;
+  margin:0rem auto;  /*We need to use this for both p and h3 because using this at footer only makes the 
+  container centered. In order to center everything by container, we may use display:flex & justify-content: center;*/
+  display:inline-block; /*Puts p elements side by side.*/
+}
+
+footer p:hover {
+  background-color: #dfdfe2;
+  cursor: pointer;
+ }
   
